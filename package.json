@@ -1,0 +1,46 @@
+{
+  "name": "dsh-bilibili-radio",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Bilibili radio in the left sidebar.",
+  "icon": "./logo.svg",
+  "main": "./index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./icon": "./logo.svg",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "index.js",
+    "bili.js",
+    "client.js",
+    "gsap.min.js",
+    "cordis.patch.yml",
+    "logo.svg",
+    "locale/*.json",
+    "README.md",
+    "examples/*.png"
+  ],
+  "peerDependencies": {
+    "@deepseek-ai/dsh-tools": "0.2.2-rc.1"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-sidebar",
+        "@deepseek-ai/dsh-client-ui-layout",
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-ui-chat",
+        "@deepseek-ai/dsh-client-ui-tool"
+      ]
+    }
+  }
+}
